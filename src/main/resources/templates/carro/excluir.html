@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir - Carro</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Exclusão de Carro</h1>
+        <form th:action="@{/carro/excluir}" th:object="${carro}" method="post"> 
+                 
+            <div>
+                <label> Código do Carro
+                   <input type="text" th:field="*{codigo}" readonly="readonly"> 
+                </label>
+            </div>
+            <div>
+                <label> Placa do Carro
+                    <input type="text" th:field="*{placa}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Cliente Relacionado
+                    <input type="text" th:field="*{cliente.nome}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Modelo do Carro
+                    <input type="text" th:field="*{modelo.nome}" readonly="readonly">
+                </label>
+            </div>
+            <input type="submit" value="Excluir">
+            <button type="button"><a href="/carro">Voltar para lista de Carros</a></button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar - Cliente</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Detalhes sobre o Cliente</h1>
+        <form th:action="@{/cliente}" th:object="${cliente}" method="get"> 
+                 
+            <div>
+                <label> Código do Cliente
+                   <input type="text" th:field="*{codigo}" readonly="READONLY"> 
+                </label>
+            </div>
+            <div>
+                <label> Nome do Cliente
+                    <input type="text" th:field="*{nome}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> CPF:
+                    <input type="text" th:field="*{cpf}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Celular:
+                    <input type="text" th:field="*{celular}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Email:
+                    <input type="text" th:field="*{email}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Cidade:
+                    <input type="text" th:field="*{cidade}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Bairro:
+                    <input type="text" th:field="*{bairro}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Rua:
+                    <input type="text" th:field="*{rua}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Número:
+                    <input type="text" th:field="*{numero}" readonly="readonly">
+                </label>
+            </div>
+            <input type="submit" value="Voltar">
+        </form>
+    </div>
+</body>
+</html>

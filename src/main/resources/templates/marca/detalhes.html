@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar - Marca</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Detalhes sobre a Marca</h1>
+        <form th:action="@{/marca}" th:object="${marca}" method="get"> 
+                 
+            <div>
+                <label> Código da Marca
+                   <input type="text" th:field="*{codigo}" readonly="READONLY"> 
+                </label>
+            </div>
+            <div>
+                <label> Nome da Marca
+                    <input type="text" th:field="*{nome}" readonly="readonly">
+                </label>
+            </div>
+            </div>
+            <input type="submit" value="Voltar">
+        </form>
+    </div>
+</body>
+</html>

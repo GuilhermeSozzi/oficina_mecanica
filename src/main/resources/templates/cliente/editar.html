@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar - Cliente</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Editar Cliente</h1>
+        <h3>Em campos como CPF e Celular, digitar apenas números, sem caracteres especiais.</h3>
+        <form th:action="@{/cliente/editar}" th:object="${cliente}" method="post">
+            <div>
+                <label> Código do Cliente - Não alterável
+                    <input type="number" th:field="*{codigo}" readonly>
+                </label>
+            </div>
+            <div>
+                <label> Nome do Cliente
+                    <input type="text" th:field="*{nome}" maxlength="60" required>
+                </label>
+            </div>
+            <div>
+                <label> CPF:
+                    <input type="text" th:field="*{cpf}" minlength="11" maxlength="11" required>
+                </label>
+            </div>
+            <div>
+                <label> Celular
+                    <input type="tel" th:field="*{celular}" minlength="11" maxlength="11" required>
+                </label>
+            </div>
+            <div>
+                <label> Email
+                    <input type="text" th:field="*{email}" maxlength="50" required>
+                </label>
+            </div>
+            <div>
+                <label> Cidade
+                    <input type="text" th:field="*{cidade}" maxlength="30" required>
+                </label>
+            </div>
+            <div>
+                <label> Bairro
+                    <input type="text" th:field="*{bairro}" maxlength="30" required>
+                </label>
+            </div>
+            <div>
+                <label> Rua
+                    <input type="text" th:field="*{rua}" maxlength="30" required>
+                </label>
+            </div>
+            <div>
+                <label> Número
+                    <input type="number" th:field="*{numero}" required>
+                </label>
+            </div>
+            <input type="submit" value="Gravar">
+            <button type="button"><a href="/cliente">Voltar para lista de Clientes</a></button>
+        </form>
+    </div>
+</body>
+</html>

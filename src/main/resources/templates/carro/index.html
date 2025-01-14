@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <h1>Lista de Carros</h1>
+    
+    <a th:href="@{carro/novo}"><button>Novo Carro</button></a>
+    <table>
+        <thead>
+            <th>Modelo</th>
+            <th>Placa</th>
+            <th>Número de Chassi</th>
+            <th>Cor</th>
+            <th>Quilometragem (na data de cadastro)</th>
+            <th>Número de Portas</th>
+            <th>Ações</th>
+        </thead>
+        <tr th:each="carro : ${carros}">
+            <td th:text="*{carro.modelo.nome}"></td>
+            <td th:text="*{carro.placa}"></td>
+            <td th:text="*{carro.numeroChassi}"></td>
+            <td th:text="*{carro.cor}"></td>
+            <td th:text="*{carro.quilometragem}"></td>
+            <td th:text="*{carro.numeroPortas}"></td>
+            <td>
+                <div class="acoes">
+                    <a th:href="@{carro/detalhes/}+*{carro.codigo}">Detalhar</a>
+                    <a th:href="@{carro/editar/}+*{carro.codigo}">Editar</a>
+                    <a th:href="@{carro/excluir/}+*{carro.codigo}">Excluir</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

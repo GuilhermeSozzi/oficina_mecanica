@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar - Modelo</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Editar Modelo</h1>
+        <form th:action="@{/modelo/editar}" th:object="${modelo}" method="post">
+            <div>
+                <label> Código do Modelo - Não alterável
+                    <input type="number" th:field="*{codigo}" readonly>
+                </label>
+            </div>
+            <div>
+                <label> Nome do Modelo
+                    <input type="text" th:field="*{nome}" minlength="1" maxlength="20" required>
+                </label>
+            </div>
+            <div>
+                <label> Ano do Modelo
+                    <input type="number" th:field="*{ano}" required>
+                </label>
+            </div>
+            <div>
+                <label for="marca">Marcas</label>
+                <select id="marca" th:field="*{marca}">
+                    <option value="" disabled selected>Selecione uma marca</option>
+                    <option th:each="marca : ${marcas}" th:value="${marca.codigo}" th:text="${marca.nome}"></option>
+                </select> 
+            </div>
+            <input type="submit" value="Gravar">
+        </form>
+        <button type="button"><a href="/modelo">Voltar para lista de Modelos</a></button>
+    </div>
+</body>
+</html>

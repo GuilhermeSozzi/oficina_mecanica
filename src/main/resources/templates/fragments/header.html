@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Título da Página</title>
+</head>
+<body>
+    <header th:fragment="header">
+        <nav>
+            <ul>
+                <li><a th:href="@{/}" th:text="'Home'"></a></li>
+                <li><a th:href="@{/cliente}" th:text="'Clientes'"></a></li>
+                <li><a th:href="@{/carro}" th:text="'Carros'"></a></li>
+                <li><a th:href="@{/moto}" th:text="'Motos'"></a></li>
+                <li><a th:href="@{/marca}" th:text="'Marcas'"></a></li>
+                <li><a th:href="@{/modelo}" th:text="'Modelos'"></a></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>

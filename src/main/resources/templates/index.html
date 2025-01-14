@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Central</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <h1>Olá! Seja bem vindo ao Painel de Cadastro da Oficina YoshiXx</h1>
+    <h3>Cadastros Suportados: 1 - Cliente; 2 - Marca; 3 - Modelo; 4 - Carro; 5 - Moto.</h3>
+    <div >
+        <ul th:each="item : ${Menu}">
+            <li>
+                <a th:href="*{item.url}" th:text="${item.titulo}"></a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

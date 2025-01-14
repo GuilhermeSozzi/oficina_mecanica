@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir - Modelo</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Exclusão de Modelo</h1>
+        <form th:action="@{/modelo/excluir}" th:object="${modelo}" method="post"> 
+                 
+            <div>
+                <label> Código do Modelo
+                   <input type="text" th:field="*{codigo}" readonly="readonly"> 
+                </label>
+            </div>
+            <div>
+                <label> Nome da Modelo
+                    <input type="text" th:field="*{nome}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Ano do Modelo
+                    <input type="number" th:field="*{ano}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Marca Relacionada
+                    <input type="text" th:field="*{marca.nome}" readonly="READONLY"> 
+                </label>
+            </div>
+            <input type="submit" value="Excluir">
+            <button type="button"><a href="/modelo">Voltar para lista de Modelos</a></button>
+        </form>
+    </div>
+</body>
+</html>

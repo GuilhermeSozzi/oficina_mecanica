@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <h1>Lista de Clientes</h1>
+    
+    <a th:href="@{cliente/novo}"><button>Novo Cliente</button></a>
+    <table>
+        <thead>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Email</th>
+            <th>Celular</th>
+            <th>Ações</th>
+        </thead>
+        <tr th:each="cliente : ${clientes}">
+            <td th:text="*{cliente.codigo}"></td>
+            <td th:text="*{cliente.nome}"></td>
+            <td th:text="*{cliente.cpf}"></td>
+            <td th:text="*{cliente.email}"></td>
+            <td th:text="*{cliente.celular}"></td>
+            <td>
+                <div class="acoes">
+                    <a th:href="@{cliente/detalhes/}+*{cliente.codigo}">Detalhar</a>
+                    <a th:href="@{cliente/editar/}+*{cliente.codigo}">Editar</a>
+                    <a th:href="@{cliente/excluir/}+*{cliente.codigo}">Excluir</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

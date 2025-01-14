@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar - Modelo</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Detalhes sobre o Modelo</h1>
+        <form th:action="@{/modelo}" th:object="${modelo}" method="get"> 
+            <div>
+                <label> Código do Modelo
+                   <input type="text" th:field="*{codigo}" readonly="READONLY"> 
+                </label>
+            </div>
+            <div>
+                <label> Nome do Modelo
+                    <input type="text" th:field="*{nome}" readonly="readonly">
+                </label>
+            </div>
+            <div>
+                <label> Ano do Modelo
+                   <input type="text" th:field="*{ano}" readonly="READONLY"> 
+                </label>
+            </div>
+            <div>
+                <label> Marca Relacionada
+                   <input type="text" th:field="*{marca.nome}" readonly="READONLY"> 
+                </label>
+            </div>
+            </div>
+            <input type="submit" value="Voltar">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo - Modelo</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Inserir Modelo</h1>
+        <form th:action="@{novo}" th:object="${modelo}" method="post">
+            <div>
+                <label> Nome do Modelo
+                    <input type="text" th:field="*{nome}" minlength="1" maxlength="20" required>
+                </label>
+            </div>
+            <div>
+                <label> Ano do Modelo
+                    <input type="number" th:field="*{ano}" required>
+                </label>
+            </div>
+            <div>
+                <label for="marca">Marca:</label>
+                <select id="marca" th:field="*{marca}">
+                    <option value="" disabled selected>Selecione uma marca</option>
+                    <option th:each="marca : ${marcas}" th:value="${marca.codigo}" th:text="${marca.nome}"></option>
+                </select> 
+            </div>
+            <input type="submit" value="Gravar">
+        </form>
+    </div>
+</body>
+</html>

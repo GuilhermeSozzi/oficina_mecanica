@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo - Marca</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Inserir Marca</h1>
+        <h3>Não repetir nomes de marca.</h3>
+        <form th:action="@{novo}" th:object="${marca}" method="post">
+            <div>
+                <label> Nome do Marca
+                    <input type="text" th:field="*{nome}" maxlength="30" required>
+                </label>
+            </div>
+            <input type="submit" value="Gravar">
+        </form>
+    </div>
+</body>
+</html>

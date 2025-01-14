@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Cadastrados</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <h1>Lista de Marcas Cadastradas</h1>
+    
+    <a th:href="@{modelo/novo}"><button>Novo Modelo</button></a>
+    <table>
+        <thead>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Ano</th>
+            <th>Marca Relacionada</th>
+            <th>Ações</th>
+        </thead>
+        <tr th:each="modelo : ${modelo}">
+            <td th:text="*{modelo.codigo}"></td>
+            <td th:text="*{modelo.nome}"></td>
+            <td th:text="*{modelo.ano}"></td>
+            <td th:text="*{modelo.marca.nome}"></td>
+            <td>
+                <div class="acoes">
+                    <a th:href="@{modelo/detalhes/}+*{modelo.codigo}">Detalhar</a>
+                    <a th:href="@{modelo/editar/}+*{modelo.codigo}">Editar</a>
+                    <a th:href="@{modelo/excluir/}+*{modelo.codigo}">Excluir</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo - Moto</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Inserir Moto</h1>
+        <h3>Em Placa e Número de Chassi, não inserir caracteres especiais.</h3>
+        <form th:action="@{novo}" th:object="${moto}" method="post">
+            <div>
+                <label> Placa do Moto
+                    <input type="text" th:field="*{placa}" minlength="7" maxlength="7" required>
+                </label>
+            </div>
+            <div>
+                <label> Número do Chassi
+                    <input type="text" th:field="*{numeroChassi}" minlength="17" maxlength="17" required>
+                </label>
+            </div>
+            <div>
+                <label> Cor
+                    <input type="text" th:field="*{cor}" maxlength="20" required>
+                </label>
+            </div>
+            <div>
+                <label> Quilometragem
+                    <input type="number" th:field="*{quilometragem}" required>
+                </label>
+            </div>
+            <div>
+                <label> Possui Carro Lateral:
+                    <select id="carroLateral" th:field="*{carroLateral}" required>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </label>
+            </div>
+            <div>
+                <label for="modelo">Modelo:</label>
+                <select id="modelo" th:field="*{modelo}">
+                    <option value="" disabled selected>Selecione um modelo</option>
+                    <option th:each="modelo : ${modelos}" th:value="${modelo.codigo}" th:text="${modelo.nome}"></option>
+                </select> 
+            </div>
+            <div>
+                <label for="cliente">Cliente relacionado:</label>
+                <select id="cliente" th:field="*{cliente}">
+                    <option value="" disabled selected>Selecione um cliente</option>
+                    <option th:each="cliente : ${clientes}" th:value="${cliente.codigo}" th:text="${cliente.nome}"></option>
+                </select> 
+            </div>
+            <input type="submit" value="Gravar">
+        </form>
+    </div>
+</body>
+</html>

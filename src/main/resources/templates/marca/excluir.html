@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir - Marca</title>
+    <link rel="stylesheet" href="/formulario.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <div>
+        <h1>Exclusão de Marca</h1>
+        <h3 style="color: red;">Mensagem ao professor: Apenas para fins didáticos, essa página em específico permite a exclusão de um registro que possua dependência direta.</h3>
+        <h3 style="color: red;">Caso existam, suas dependências diretas (modelo) serão excluídas também para expressar a composição.</h3>
+        <h3 style="color: red;">Mas, caso o modelo esteja presente em um carro, a exclusão não será feita.</h3>
+        <form th:action="@{/marca/excluir}" th:object="${marca}" method="post"> 
+                 
+            <div>
+                <label> Código da Marca
+                   <input type="text" th:field="*{codigo}" readonly="readonly"> 
+                </label>
+            </div>
+            <div>
+                <label> Nome da Marca
+                    <input type="text" th:field="*{nome}" readonly="readonly">
+                </label>
+            </div>
+            <input type="submit" value="Excluir">
+            <button type="button"><a href="/marca">Voltar para lista de Funcionários</a></button>
+        </form>
+    </div>
+</body>
+</html>

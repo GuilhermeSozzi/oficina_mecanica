@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #333;
+}
+
+div {
+    margin: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.acoes a {
+    margin-right: 20px;
+}
+
+.acoes a:last-child {
+    margin-right: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0; 
+    color: white;
+    text-align: center;
+} 
+
+nav ul { 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+    display: flex; 
+    justify-content: center;
+} 
+
+nav ul li { 
+    margin: 0 15px; 
+} 
+
+nav ul li a { 
+    text-decoration: none; 
+    color: white; 
+    font-size: 18px; 
+    transition: color 0.3s ease; 
+} 
+
+nav ul li a:hover { 
+    color: #ffcc00; 
+}

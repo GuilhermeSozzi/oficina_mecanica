@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcas Cadastradas</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <h1>Lista de Marcas Cadastradas</h1>
+    
+    <a th:href="@{marca/novo}"><button>Nova Marca</button></a>
+    <table>
+        <thead>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Ações</th>
+        </thead>
+        <tr th:each="marca : ${marca}">
+            <td th:text="*{marca.codigo}"></td>
+            <td th:text="*{marca.nome}"></td>
+            <td>
+                <div class="acoes">
+                    <a th:href="@{marca/detalhes/}+*{marca.codigo}">Detalhar</a>
+                    <a th:href="@{marca/editar/}+*{marca.codigo}">Editar</a>
+                    <a th:href="@{marca/excluir/}+*{marca.codigo}">Excluir</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

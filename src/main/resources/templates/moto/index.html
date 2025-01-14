@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motos</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div th:replace="fragments/header :: header"></div>
+    <h1>Lista de Motos</h1>
+    
+    <a th:href="@{moto/novo}"><button>Novo Carro</button></a>
+    <table>
+        <thead>
+            <th>Modelo</th>
+            <th>Placa</th>
+            <th>Número de Chassi</th>
+            <th>Cor</th>
+            <th>Quilometragem (na data de cadastro)</th>
+            <th>Carro Lateral</th>
+            <th>Ações</th>
+        </thead>
+        <tr th:each="moto : ${motos}">
+            <td th:text="*{moto.modelo.nome}"></td>
+            <td th:text="*{moto.placa}"></td>
+            <td th:text="*{moto.numeroChassi}"></td>
+            <td th:text="*{moto.cor}"></td>
+            <td th:text="*{moto.quilometragem}"></td>
+            <td th:text="*{moto.carroLateral}"></td>
+            <td>
+                <div class="acoes">
+                    <a th:href="@{moto/detalhes/}+*{moto.codigo}">Detalhar</a>
+                    <a th:href="@{moto/editar/}+*{moto.codigo}">Editar</a>
+                    <a th:href="@{moto/excluir/}+*{moto.codigo}">Excluir</a>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
