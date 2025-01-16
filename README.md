@@ -1,7 +1,9 @@
 ### Aplicação de cadastro para Oficinas Mecânicas
 
 ### Projeto acadêmico para a matéria de Programação Orientada a Objetos.
-Feito em colaboração com 2 colegas (checar colaboradores para mais detalhes).
+Feito em colaboração com 2 colega: 
+  Gabriel Rodrigues (https://github.com/Gabs-R).
+  Lucas Yoshio.
 Utilizamos o framework SpringBoot em conjunto com JAVA, HTML e CSS para criar uma aplicação WEB com persistência de dados.
 Foi utilizado o Copilot para apoio na criação do CSS das páginas.
 
