@@ -1,4 +1,4 @@
-# Aplicação de cadastro para Oficinas Mecânicas de Pequeno a Médio Porte
+# Aplicação Web que permite o cadastro de dados para Oficinas Mecânicas de Pequeno a Médio Porte
 
 ## Sobre
 ### Projeto acadêmico para a matéria de Programação Orientada a Objetos.
