@@ -18,10 +18,10 @@ O projeto permite a visualização, cadastro, edição e exclusão de dados refe
   3) Modelo de Veículo
   4) Veículo
 
-### Banco de Dados
+## Banco de Dados
 O programa cria automaticamente um banco de dados relacional para persistência dos dados caso ele não exista;
 Se já houver um BD criado, a aplicação o acessa e carrega com base nos dados registrados nele.
 
-### Padrão utilizado no projeto
+## Padrão utilizado no projeto
 O padrão usado para gerenciar a aplicação foi o MVC, permitindo modularizar e controlar melhor cada um de seus componentes.
 O paradigma de Programação Orientada a Objetos 
