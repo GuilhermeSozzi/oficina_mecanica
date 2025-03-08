@@ -2,9 +2,11 @@
 
 ## Sobre
 ### Projeto acadêmico para a matéria de Programação Orientada a Objetos.
-Feito em colaboração com 2 colega: 
+Feito em colaboração com 2 colegas:
+
   - Gabriel Rodrigues (https://github.com/Gabs-R).
   - Lucas Yoshio.
+
 Utilizamos o framework SpringBoot (com Java) em conjunto com HTML e CSS para criar uma aplicação WEB com persistência de dados.
 Foi utilizado o Copilot para apoio na criação do CSS das páginas.
 
